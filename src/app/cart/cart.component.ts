@@ -28,6 +28,6 @@ export class CartComponent {
 
   clearCart() {
     this.items = this.cartService.clearCart();
-    //window.alert('Your cart has been cleared!');
+    window.alert('Your cart has been cleared!');
   }
 }
