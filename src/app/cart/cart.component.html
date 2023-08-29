@@ -9,10 +9,6 @@
   <span>{{ item.price | currency: 'EUR' }}</span>
 </div>
 
-<div *ngIf="items.length > 0">
-  <button class="button" type="submit" (click)="clearCart()">Clear Cart</button>
-</div>
-
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name"> Name </label>
@@ -23,6 +19,13 @@
     <label for="address">Address</label>
     <input id="address" type="text" formControlName="address" />
   </div>
+  <div class="botoes">
+    <button class="button" type="submit">Purchase</button>
 
-  <button class="button" type="submit">Purchase</button>
+    <div *ngIf="items.length > 0">
+      <button class="button" type="submit" (click)="clearCart()">
+        Clear Cart
+      </button>
+    </div>
+  </div>
 </form>
